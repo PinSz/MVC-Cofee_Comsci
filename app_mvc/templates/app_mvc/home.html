@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Home-view</title>
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+   <br>
+   <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+         <form method="POST">
+            {{ form_Form_cofee }}
+            {% csrf_token %}
+            <button type="submit" name="Espresso" value="Espresso" class="btn btn-primary">Espresso </button>
+            <button type="submit" name="Cappuccino"  class="btn btn-secondary">Cappuccino </button>
+            <button type="submit" name="Latte" class="btn btn-warning">Latte </button>
+            <button type="submit" name="Americano" class="btn btn-dark">Americano </button>
+            <br>
+            <button type="submit" name="Summary" class="btn btn-success">Summary </button>
+            <input type="text" value=" {{mix}} {{text01}}{{cofee.0}} {{text03}}{{cofee.0}}{{text02}} {{text04}}{{cofee.1}}{{text02}}" 
+            style="width: 300px"/>{{form}}
+         </form>
+      </div>
+      <div class="col-3"></div>
+   </div>
+   <br>
+
+</div>
+{% endblock %}
